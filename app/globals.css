@@ -218,10 +218,13 @@ h1, h2, h3, h4 { font-family: var(--heading); margin: 0; text-transform: upperca
   .mobile-menu { display: block; justify-self: end; }
   .mobile-menu-toggle { width: 48px; height: 48px; border: 1px solid var(--line); background: transparent; color: #fff; display: grid; place-items: center; }
   .mobile-menu-backdrop { position: fixed; inset: 0; z-index: 70; border: 0; background: rgba(0,0,0,.65); }
-  .mobile-menu-panel { position: fixed; top: 0; right: 0; bottom: 0; z-index: 71; width: min(430px,90vw); padding: 2rem; background: var(--paper); color: var(--ink); }
+  .mobile-menu-panel { position: fixed; top: 0; right: 0; bottom: 0; z-index: 71; width: min(430px,90vw); padding: 2rem; background: var(--paper); color: var(--ink); box-shadow: -24px 0 70px rgba(0,0,0,.28); }
+  .mobile-menu-close { position: absolute; top: 1.25rem; right: 1.25rem; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid #aeb0ac; background: transparent; color: var(--ink); cursor: pointer; }
   .mobile-menu-kicker { color: var(--orange); font: 900 .75rem var(--body); letter-spacing: .16em; margin: 5rem 0 2rem; }
   .mobile-menu-panel nav { display: flex; flex-direction: column; }
-  .mobile-menu-panel nav a { padding: 1rem 0; border-top: 1px solid #b7b6b1; font: 900 1.55rem var(--heading); text-transform: uppercase; }
+  .site-header .mobile-menu-panel nav a { padding: 1rem 0; border-top: 1px solid #b7b6b1; color: var(--ink); font: 900 1.55rem/1.05 var(--heading); letter-spacing: .035em; text-transform: uppercase; }
+  .site-header .mobile-menu-panel nav a:hover { color: var(--orange); }
+  .site-header .mobile-menu-panel nav a::after { display: none; }
   .mobile-menu-panel nav span { color: var(--orange); display: inline-block; width: 45px; font-size: .8rem; }
   .service-grid { grid-template-columns: repeat(2,1fr); }
   .service-card:nth-child(odd) { border-left: 1px solid var(--line); }

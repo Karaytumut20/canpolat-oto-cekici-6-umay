@@ -34,6 +34,7 @@ export function MobileMenu({ links }: { links: MenuLink[] }) {
       </button>
       {open && <><button className="mobile-menu-backdrop" aria-label="Menüyü kapat" onClick={() => setOpen(false)} />
       <div id="mobile-navigation" className="mobile-menu-panel is-open">
+        <button className="mobile-menu-close" type="button" aria-label="Menüyü kapat" onClick={() => setOpen(false)}><X /></button>
         <div className="mobile-menu-kicker">UMAY OTO KURTARICI</div>
         <nav aria-label="Mobil menü">
           {links.map((link, index) => (
