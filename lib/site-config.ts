@@ -18,5 +18,5 @@ export const siteConfig = {
   longitude: 29.2783173,
   logo: "/umay-logo-transparent.png",
   hero: "/umay-sancaktepe-hero.png",
-  domain: "https://sancaktepe-cekici-umay.invalid",
+  domain: "https://sancaktepe-cekici-umay.benjaminbilgehan481.chatgpt.site",
 } as const;
