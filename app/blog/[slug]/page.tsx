@@ -221,14 +221,13 @@ export default async function BlogPostDetailPage({
             </h3>
             <div className="faq-list">
               {post.faqs.map((faq, i) => (
-                <details key={faq.q} className="border-b border-slate-800">
-                  <summary className="cursor-pointer py-4 flex items-center justify-between text-base font-bold text-white">
-                    <span>0{i + 1}. {faq.q}</span>
-                    <span className="text-amber-500 text-xl font-mono">+</span>
+                <details key={faq.q}>
+                  <summary>
+                    <span>0{i + 1}</span>
+                    <div>{faq.q}</div>
+                    <b>+</b>
                   </summary>
-                  <p className="text-slate-400 text-sm pb-4 pl-6 leading-relaxed m-0">
-                    {faq.a}
-                  </p>
+                  <p>{faq.a}</p>
                 </details>
               ))}
             </div>

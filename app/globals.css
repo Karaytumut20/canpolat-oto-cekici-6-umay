@@ -134,6 +134,8 @@ h1, h2, h3, h4 { font-family: var(--heading); margin: 0; text-transform: upperca
 .faq-section { background: var(--navy); }
 .faq-list { border-top: 1px solid var(--line); }
 .faq-list details { border-bottom: 1px solid var(--line); }
+.area-content .faq-list { border-top: 1px solid #c7c5bf; }
+.area-content .faq-list details { border-bottom: 1px solid #c7c5bf; }
 .faq-list summary { list-style: none; cursor: pointer; padding: 1.35rem 0; display: grid; grid-template-columns: 70px 1fr 40px; align-items: center; font: 800 clamp(1.2rem,2vw,1.7rem) var(--heading); text-transform: uppercase; }
 .faq-list summary::-webkit-details-marker { display: none; }
 .faq-list summary span { color: var(--orange); }
