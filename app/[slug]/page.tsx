@@ -186,21 +186,18 @@ export default async function LocationPage({
           ))}
 
           {/* Regional Roads and Specific Context */}
-          <div className="p-6 rounded-lg bg-slate-900/70 border border-slate-800 my-8">
-            <h4 className="text-sm font-bold text-amber-500 uppercase tracking-wider flex items-center gap-2 mb-3">
+          <div className="area-road-panel">
+            <h4>
               <Compass size={18} /> {loc.name} Bağlantı Yolları ve Arterler
             </h4>
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="area-road-tags">
               {loc.roads.map((road) => (
-                <span
-                  key={road}
-                  className="px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-semibold"
-                >
+                <span key={road}>
                   {road}
                 </span>
               ))}
             </div>
-            <p className="text-slate-400 text-xs leading-relaxed m-0">
+            <p>
               Bu güzergahlarda meydana gelen akü bitmesi, lastik yarılması, kaza veya motor arızalarında
                   ekibimiz konum ve trafik durumunu kontrol ederek uygun ulaşım planını oluşturur.
             </p>
@@ -211,26 +208,26 @@ export default async function LocationPage({
             <h3 className="text-xl font-bold mb-3">
               {loc.name} Çevresinde Yolda Kalınca Ne Yapmalısınız?
             </h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3 p-4 rounded-md bg-slate-900/50 border border-slate-800">
-                <AlertTriangle className="text-amber-500 shrink-0 mt-0.5" size={20} />
-                <div className="text-sm text-slate-300">
-                  <strong className="text-white block mb-1">1. Can Güvenliğini Sağlayın</strong>
+            <div className="area-checklist">
+              <div className="area-check-card">
+                <AlertTriangle size={20} />
+                <div>
+                  <strong>1. Can Güvenliğini Sağlayın</strong>
                   Aracı mümkünse emniyet şeridine çekin, dörtlüleri yakın ve araçta beklemeyin. Yol kenarındaki
                   bariyerlerin arkasına geçin.
                 </div>
               </div>
-              <div className="flex items-start gap-3 p-4 rounded-md bg-slate-900/50 border border-slate-800">
-                <Compass className="text-amber-500 shrink-0 mt-0.5" size={20} />
-                <div className="text-sm text-slate-300">
-                  <strong className="text-white block mb-1">2. Canlı Konumunuzu Paylaşın</strong>
+              <div className="area-check-card">
+                <Compass size={20} />
+                <div>
+                  <strong>2. Canlı Konumunuzu Paylaşın</strong>
                   WhatsApp üzerinden tek tıkla konum paylaşarak ekibimizin tam yerinizi navigasyonda görmesini sağlayın.
                 </div>
               </div>
-              <div className="flex items-start gap-3 p-4 rounded-md bg-slate-900/50 border border-slate-800">
-                <Truck className="text-amber-500 shrink-0 mt-0.5" size={20} />
-                <div className="text-sm text-slate-300">
-                  <strong className="text-white block mb-1">3. Güvenli Yükleme ve Nakil</strong>
+              <div className="area-check-card">
+                <Truck size={20} />
+                <div>
+                  <strong>3. Güvenli Yükleme ve Nakil</strong>
                   Aracınız hidrolik kayar kasa çekicimize çelik tambur ve takozlarla hasarsız sabitlenerek istediğiniz
                   servise taşınır.
                 </div>

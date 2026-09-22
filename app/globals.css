@@ -174,6 +174,15 @@ h1, h2, h3, h4 { font-family: var(--heading); margin: 0; text-transform: upperca
 .area-content article h2 { margin: .8rem 0 2.2rem; font-size: clamp(3.2rem,5vw,5.8rem); line-height: .84; letter-spacing: -.04em; }
 .area-content article h3 { margin: 2rem 0 .65rem; font-size: 1.7rem; }
 .area-content article p { color: #47545e; line-height: 1.8; }
+.area-road-panel { margin: 2rem 0; padding: 1.5rem; border: 1px solid #bbb6ac; background: var(--paper-2); color: var(--ink); }
+.area-road-panel h4 { display: flex; align-items: center; gap: .5rem; margin-bottom: .85rem; color: var(--orange-dark); font: 900 .9rem var(--heading); letter-spacing: .08em; }
+.area-road-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+.area-road-tags span { padding: .35rem .65rem; border: 1px solid #aaa69d; background: var(--paper); color: var(--ink); font-size: .72rem; font-weight: 800; }
+.area-road-panel p { margin: 0; color: #47545e !important; font-size: .78rem; line-height: 1.7; }
+.area-checklist { display: grid; gap: .75rem; }
+.area-check-card { display: grid; grid-template-columns: 24px 1fr; align-items: start; gap: .75rem; padding: 1rem; border: 1px solid #bbb6ac; background: var(--paper-2); color: #47545e; font-size: .85rem; line-height: 1.65; }
+.area-check-card svg { color: var(--orange-dark); }
+.area-check-card strong { display: block; margin-bottom: .15rem; color: var(--ink); font-weight: 900; }
 .area-content aside { border-top: 5px solid var(--orange); padding-top: 1.2rem; }
 .area-content aside h3 { color: var(--orange); font-size: 1.1rem; }
 .area-content aside ul { list-style: none; padding: 0; }
