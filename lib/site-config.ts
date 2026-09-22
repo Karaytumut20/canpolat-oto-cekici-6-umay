@@ -5,8 +5,9 @@ export const siteConfig = {
   slogan: "Sancaktepe, Çekmeköy, Sultanbeyli ve Pendik'te 7/24 oto kurtarma",
   phone: "+905309559452",
   phoneDisplay: "0530 955 94 52",
+  whatsappPhone: "905418238815",
   whatsapp:
-    "https://wa.me/905309559452?text=Merhaba%2C%20%C3%A7ekici%20veya%20yol%20yard%C4%B1m%20deste%C4%9Fine%20ihtiyac%C4%B1m%20var.%20Konumumu%20payla%C5%9F%C4%B1yorum.",
+    "https://wa.me/905418238815?text=Merhaba%2C%20%C3%A7ekici%20veya%20yol%20yard%C4%B1m%20deste%C4%9Fine%20ihtiyac%C4%B1m%20var.%20Konumumu%20payla%C5%9F%C4%B1yorum.",
   mapsUrl:
     "https://maps.app.goo.gl/h31BB9UWvTNS6ZVo7?g_st=iwb",
   mapsEmbed:
