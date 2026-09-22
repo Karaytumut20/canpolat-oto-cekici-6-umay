@@ -11,17 +11,17 @@ import {
 } from "@/lib/seo-schema";
 
 export const metadata: Metadata = {
-  title: "Yol Yardım & Oto Kurtarma Bilgi Rehberi | Arman Oto Kurtarma",
+  title: "Yol Yardım & Oto Kurtarma Bilgi Rehberi | Umay Oto Kurtarıcı",
   description:
     "Yolda kaldığınızda yapmanız gerekenler, kaza tutanağı doldurma, akü takviyesi, lastik patlaması ve oto çekici fiyatları hakkında uzman rehberler.",
   alternates: { canonical: `${siteConfig.domain}/blog` },
   openGraph: {
-    title: "Yol Yardım & Oto Kurtarma Bilgi Rehberi | Arman Oto Kurtarma",
+    title: "Yol Yardım & Oto Kurtarma Bilgi Rehberi | Umay Oto Kurtarıcı",
     description:
       "Sürücüler için hayat kurtaran pratik bilgiler, kaza sonrası süreçler ve çekici çağırma kılavuzları.",
     url: `${siteConfig.domain}/blog`,
     siteName: siteConfig.name,
-    images: [{ url: `${siteConfig.domain}/arman-hero.jpg` }],
+    images: [{ url: `${siteConfig.domain}${siteConfig.hero}` }],
   },
 };
 
@@ -36,7 +36,7 @@ export default function BlogIndexPage() {
     <main className="blog-page">
       {/* Header */}
       <header className="site-header">
-        <Link href="/" className="brand" aria-label="Arman Oto Kurtarma Ana Sayfa">
+        <Link href="/" className="brand" aria-label="Umay Oto Kurtarıcı Ana Sayfa">
           <BrandLogo variant="horizontal" />
         </Link>
         <nav aria-label="Navigasyon">
@@ -74,7 +74,7 @@ export default function BlogIndexPage() {
           <h1>Yolda Kalınca İhtiyacınız Olan Tüm Bilgiler</h1>
           <p>
             Kaza tutanağından akü takviyesine, çekici fiyat hesaplamasından otoyol emniyet kurallarına
-            kadar Arman Oto Kurtarma uzmanlarının hazırladığı rehber içerikler.
+            kadar Umay Oto Kurtarıcı ekibinin hazırladığı rehber içerikler.
           </p>
           <div className="area-hero-actions">
             <a className="primary-cta" href={`tel:${siteConfig.phone}`}>

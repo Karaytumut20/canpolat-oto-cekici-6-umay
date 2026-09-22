@@ -10,17 +10,17 @@ export function BrandLogo({
 }) {
   if (variant === "horizontal") {
     return <span className="brand-lockup">
-      <Image className="brand-lockup-mark" src="/arman-logo-header.png" alt="" width={611} height={715} priority />
-      <span className="brand-lockup-type"><b>ARMAN</b><strong>OTO KURTARMA</strong><small>ÇEKMEKÖY · ÜSKÜDAR · 7/24</small></span>
+      <Image className="brand-lockup-mark" src={siteConfig.logo} alt="" width={1672} height={944} priority />
+      <span className="brand-lockup-type"><b>UMAY</b><strong>OTO KURTARICI</strong><small>SANCAKTEPE · 7/24</small></span>
     </span>;
   }
   return (
     <Image
       className={`brand-logo${footer ? " brand-logo-footer" : ""}`}
       src={siteConfig.logo}
-      alt="Arman Oto Kurtarma"
-      width={1408}
-      height={768}
+      alt="Sancaktepe Çekici Umay Oto Kurtarıcı"
+      width={1672}
+      height={944}
       priority={!footer}
     />
   );

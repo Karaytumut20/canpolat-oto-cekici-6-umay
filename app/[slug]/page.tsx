@@ -54,10 +54,10 @@ export async function generateMetadata({
       description: loc.description,
       images: [
         {
-          url: `${siteConfig.domain}/arman-hero.jpg`,
+          url: `${siteConfig.domain}${siteConfig.hero}`,
           width: 1200,
           height: 675,
-          alt: `${loc.name} Arman Oto Kurtarma`,
+          alt: `${loc.name} Umay Oto Kurtarıcı`,
         },
       ],
     },
@@ -65,7 +65,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: loc.title,
       description: loc.description,
-      images: [`${siteConfig.domain}/arman-hero.jpg`],
+      images: [`${siteConfig.domain}${siteConfig.hero}`],
     },
   };
 }
@@ -99,13 +99,13 @@ export default async function LocationPage({
     <main className="area-page">
       {/* Header */}
       <header className="site-header">
-        <Link href="/" className="brand" aria-label="Arman Oto Kurtarma Ana Sayfa">
+        <Link href="/" className="brand" aria-label="Umay Oto Kurtarıcı Ana Sayfa">
           <BrandLogo variant="horizontal" />
         </Link>
         <nav aria-label="Navigasyon">
           <Link href="/#hizmetler">Hizmetler</Link>
           <Link href="/#bolgeler">Bölgeler</Link>
-          <Link href="/blog">Rehber</Link>
+          <Link href="/sancaktepe-oto-cekici">Sancaktepe</Link>
           <Link href="/hakkimizda">Hakkımızda</Link>
           <Link href="/iletisim">İletişim</Link>
         </nav>

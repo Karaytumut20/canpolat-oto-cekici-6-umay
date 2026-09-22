@@ -22,17 +22,17 @@ import {
 } from "@/lib/seo-schema";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda | Arman Oto Kurtarma - Çekmeköy & Üsküdar",
+  title: "Hakkımızda | Umay Oto Kurtarıcı - Sancaktepe",
   description:
-    "Arman Oto Kurtarma kurumsal profili. Çekmeköy Soğukpınar merkezli kayar kasa araç taşıma ve 7/24 yol yardım hizmetleri.",
+    "Umay Oto Kurtarıcı kurumsal profili. Sancaktepe Paşaköy merkezli kayar kasa araç taşıma ve 7/24 yol yardım hizmetleri.",
   alternates: { canonical: `${siteConfig.domain}/hakkimizda` },
   openGraph: {
-    title: "Hakkımızda | Arman Oto Kurtarma",
+    title: "Hakkımızda | Umay Oto Kurtarıcı",
     description:
-      "İstanbul Çekmeköy ve Üsküdar'da 7/24 oto çekici, oto kurtarma ve yol yardım hizmeti.",
+      "İstanbul Sancaktepe ve çevresinde 7/24 oto çekici, oto kurtarma ve yol yardım hizmeti.",
     url: `${siteConfig.domain}/hakkimizda`,
     siteName: siteConfig.name,
-    images: [{ url: `${siteConfig.domain}/arman-hero.jpg` }],
+    images: [{ url: `${siteConfig.domain}${siteConfig.hero}` }],
   },
 };
 
@@ -49,7 +49,7 @@ export default function AboutPage() {
     <main className="seo-page">
       {/* Header */}
       <header className="site-header">
-        <Link href="/" className="brand" aria-label="Arman Oto Kurtarma Ana Sayfa">
+        <Link href="/" className="brand" aria-label="Umay Oto Kurtarıcı Ana Sayfa">
           <BrandLogo variant="horizontal" />
         </Link>
         <nav aria-label="Navigasyon">
@@ -84,9 +84,9 @@ export default function AboutPage() {
           <div className="eyebrow">
             <span /> KURUMSAL PROFİLİMİZ
           </div>
-          <h1>Arman Oto Kurtarma - İstanbul&apos;un Güvenilir Yol Arkadaşı</h1>
+          <h1>Umay Oto Kurtarıcı - Sancaktepe&apos;nin Yol Yardım Ekibi</h1>
           <p>
-            Çekmeköy Soğukpınar merkezli istasyonumuz ve Üsküdar sahra ekiplerimizle, yolda kalan her
+            Sancaktepe Paşaköy merkezli istasyonumuzla, yolda kalan her
             sürücüye açık bilgi veren ve aracın durumuna uygun ekipman kullanan bir çekici hizmeti sunuyoruz.
           </p>
           <div className="area-hero-actions">
@@ -108,7 +108,7 @@ export default function AboutPage() {
           <span>RESMİ İŞLETME KAYDI</span>
           <div className="mt-2 text-xs text-slate-300">
             <b>{siteConfig.officialName}</b>
-            <small className="block mt-1 text-slate-500">Çekmeköy / İstanbul</small>
+            <small className="block mt-1 text-slate-500">Sancaktepe / İstanbul</small>
           </div>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function AboutPage() {
               Sadece Araç Değil, Güven Taşıyoruz.
             </h2>
             <p className="text-slate-300 text-sm leading-relaxed mb-4">
-              Arman Oto Kurtarma (Resmi Ünvanı: Çekmeköy Oto Çekici Arman Oto Kurtarıcı), İstanbul&apos;un
+              Umay Oto Kurtarıcı (Resmi Ünvanı: Sancaktepe Çekici Umay Oto Kurtarıcı), İstanbul&apos;un
               Anadolu Yakası&apos;nda otomotiv çekici ve kurtarma sektöründe yaşanan güven ve şeffaflık
               sorunlarını kökten çözme vizyonuyla kurulmuştur.
             </p>
@@ -152,8 +152,8 @@ export default function AboutPage() {
           </div>
           <div className="relative rounded-xl overflow-hidden border border-slate-800 shadow-2xl">
             <Image
-              src="/arman-hero.jpg"
-              alt="Arman Oto Kurtarma Ekip Aracı"
+              src={siteConfig.hero}
+              alt="Umay Oto Kurtarıcı hizmet aracı"
               width={800}
               height={500}
               className="w-full object-cover"
@@ -161,7 +161,7 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent flex items-end p-6">
               <div className="text-white">
                 <div className="font-extrabold text-lg flex items-center gap-2">
-                  <Award className="text-amber-500" size={20} /> Arman Hizmet Standardı
+                  <Award className="text-amber-500" size={20} /> Umay Hizmet Standardı
                 </div>
                 <div className="text-xs text-slate-300 mt-1">
                   7/24 çağrı hattı ve konuma göre ekip yönlendirmesi
@@ -227,7 +227,7 @@ export default function AboutPage() {
             7/24 BİZE ULAŞIN
           </small>
           <h2>Yol Yardım Desteği İçin Hazırız.</h2>
-          <p>Çekmeköy, Üsküdar veya çevre ilçelerde dilediğiniz an bizi arayabilirsiniz.</p>
+          <p>Sancaktepe, Sarıgazi, Samandıra, Yenidoğan ve çevre ilçelerde dilediğiniz an bizi arayabilirsiniz.</p>
         </div>
         <a href={`tel:${siteConfig.phone}`}>
           <Phone size={18} /> {siteConfig.phoneDisplay}

@@ -5,8 +5,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
-  title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
-  description: "Çekmeköy ve Üsküdar'da 7/24 oto çekici, oto kurtarma ve yol yardım. Soğukpınar merkezli Arman Oto Kurtarma: 0536 213 62 49.",
+  title: "Sancaktepe Çekici | Umay Oto Kurtarıcı",
+  description: "Sancaktepe ve çevresinde 7/24 oto çekici, oto kurtarma ve yol yardım. Umay Oto Kurtarıcı: 0530 955 94 52.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
   alternates: { canonical: "/" },
   robots: {
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     url: siteConfig.domain,
     siteName: siteConfig.name,
-    title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
-    description: "Çekmeköy, Üsküdar ve çevre mahallelerde 7/24 oto çekici, oto kurtarma ve yol yardım.",
+    title: "Sancaktepe Çekici | Umay Oto Kurtarıcı",
+    description: "Sancaktepe, Sarıgazi, Samandıra, Yenidoğan ve çevre mahallelerde 7/24 oto çekici ve yol yardım.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Çekmeköy Oto Çekici | Arman Oto Kurtarma",
-    description: "Çekmeköy ve Üsküdar'da 7/24 oto çekici, oto kurtarma ve yol yardım.",
+    title: "Sancaktepe Çekici | Umay Oto Kurtarıcı",
+    description: "Sancaktepe ve çevresinde 7/24 oto çekici, oto kurtarma ve yol yardım.",
   },
 };
 
@@ -36,7 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,700;0,800;0,900;1,900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Manrope:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
       </head>

@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     route("", 1, "weekly"),
     ...["/hizmetler", "/hizmet-bolgeleri", "/blog", "/hakkimizda", "/iletisim"].map((path) => route(path, .85, "weekly")),
     ...servicesData.map((item) => route(`/hizmetler/${item.slug}`, .85, "monthly")),
-    ...locationPages.map((item) => route(`/${item.slug}`, item.district === "Çekmeköy" || item.district === "Üsküdar" ? .9 : .75, "monthly")),
+    ...locationPages.map((item) => route(`/${item.slug}`, item.district === "Sancaktepe" ? .9 : .75, "monthly")),
     ...blogPosts.map((item) => route(`/blog/${item.slug}`, .72, "monthly")),
   ];
 }

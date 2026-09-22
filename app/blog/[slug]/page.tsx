@@ -56,7 +56,7 @@ export async function generateMetadata({
       authors: [siteConfig.name],
       images: [
         {
-          url: `${siteConfig.domain}/arman-hero.jpg`,
+          url: `${siteConfig.domain}${siteConfig.hero}`,
           width: 1200,
           height: 675,
           alt: post.title,
@@ -67,7 +67,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: post.metaTitle,
       description: post.metaDescription,
-      images: [`${siteConfig.domain}/arman-hero.jpg`],
+      images: [`${siteConfig.domain}${siteConfig.hero}`],
     },
   };
 }
@@ -111,7 +111,7 @@ export default async function BlogPostDetailPage({
     <main className="blog-page">
       {/* Header */}
       <header className="site-header">
-        <Link href="/" className="brand" aria-label="Arman Oto Kurtarma Ana Sayfa">
+        <Link href="/" className="brand" aria-label="Umay Oto Kurtarıcı Ana Sayfa">
           <BrandLogo variant="horizontal" />
         </Link>
         <nav aria-label="Navigasyon">
@@ -151,7 +151,7 @@ export default async function BlogPostDetailPage({
           <h1>{post.h1}</h1>
           <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 my-4">
             <span className="flex items-center gap-1.5">
-              <User size={14} className="text-amber-500" /> Arman Teknik Ekip
+              <User size={14} className="text-amber-500" /> Umay Saha Ekibi
             </span>
             <span className="flex items-center gap-1.5">
               <Calendar size={14} className="text-amber-500" /> {post.publishDate}
@@ -242,7 +242,7 @@ export default async function BlogPostDetailPage({
               Yolda mısınız?
             </h3>
             <p className="text-xs text-slate-400 mb-3">
-              Çekmeköy ve Üsküdar için konumunuza göre ekip yönlendiriyoruz.
+              Sancaktepe ve çevresi için konumunuza göre ekip yönlendiriyoruz.
             </p>
             <a
               href={`tel:${siteConfig.phone}`}

@@ -14,489 +14,129 @@ export type ServicePageData = {
   recommendedLocations: string[];
 };
 
-export const servicesData: ServicePageData[] = [
+type ServiceSeed = {
+  slug: string;
+  name: string;
+  kicker: string;
+  summary: string;
+  features: string[];
+  sections: { heading: string; body: string }[];
+};
+
+const commonSteps = [
+  { step: "01", title: "Konumu ve araç durumunu paylaşın", desc: "Telefonla arayın veya WhatsApp üzerinden canlı konum, araç marka-modeli ve mümkünse bir fotoğraf gönderin." },
+  { step: "02", title: "Ekipman ve fiyat netleşsin", desc: "Mesafe, araç tipi ve yükleme koşuluna göre uygun ekipman ile işlem öncesi fiyat bilgisi paylaşılır." },
+  { step: "03", title: "Araç güvenle teslim edilsin", desc: "Araç kontrollü biçimde platforma alınır, sabitlenir ve seçtiğiniz servis ya da adrese taşınır." },
+];
+
+const seeds: ServiceSeed[] = [
   {
     slug: "oto-cekici",
     name: "Oto Çekici",
-    shortTitle: "Oto Çekici",
-    title: "Oto Çekici Hizmeti | 7/24 Profesyonel Taşıma Arman Oto Kurtarma",
-    description: "İstanbul Çekmeköy, Üsküdar ve tüm ilçelerde 7/24 profesyonel oto çekici. Hidrolik kayar kasa, özenli ve hasarsız araç nakliyatı: 0536 213 62 49.",
-    h1: "7/24 Profesyonel Oto Çekici Hizmeti",
-    heroKicker: "HİDROLİK KAYAR KASA · özenli TAŞIMA · işlem öncesi fiyat bilgisi",
-    summary: "Binek, SUV, ticari veya elektrikli aracınız nerede kalırsa kalsın; modern kayar kasa çekicilerimizle aracınızı hasarsız olarak dilediğiniz yetkili servise veya tamirhaneye ulaştırıyoruz.",
-    features: [
-      "Modern hidrolik kayar kasa çekici filosu",
-      "Araç tipine uygun sabitleme ekipmanı",
-      "Konuma göre paylaşılan tahmini varış süresi",
-      "Kredi kartı ve havale/EFT ile kolay ödeme",
-      "Günün 24 saati kesintisiz canlı telefon desteği"
+    kicker: "KAYAR KASA · BİNEK · SUV · HAFİF TİCARİ",
+    summary: "Arızalanan veya çalışmayan aracınızı Sancaktepe'den istediğiniz servis, otopark ya da adrese kayar kasa ile taşıyoruz.",
+    features: ["Araç tipine uygun platform", "Dört noktadan sabitleme", "Gece-gündüz çağrı hattı", "Teslim adresine doğrudan nakil", "İşlem öncesi fiyat bilgisi"],
+    sections: [
+      { heading: "Aracın durumuna göre yükleme", body: "Her araç aynı yöntemle çekilmez. Alçak tampon, otomatik şanzıman, kilitli tekerlek veya elektrikli araç gibi ayrıntıları çağrı sırasında değerlendirir; uygun platform ve yardımcı aparatı yönlendiririz." },
+      { heading: "Sancaktepe'den kontrollü taşıma", body: "Paşaköy, Sarıgazi, Samandıra, Yenidoğan ve ilçe genelinden İstanbul'un servis ve sanayi bölgelerine araç taşıması yapılır. Alış ile teslim noktası önceden netleştirilir." },
     ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Bizi Arayın & Konum Paylaşın",
-        desc: "0536 213 62 49 üzerinden arayarak veya WhatsApp'tan tek dokunuşla canlı konum gönderin."
-      },
-      {
-        step: "02",
-        title: "Şeffaf Fiyat & Ekip Sevk",
-        desc: "Mesafe ve araç durumuna göre telefonda net fiyatı öğrenin, size en yakın kayar kasa derhal yola çıksın."
-      },
-      {
-        step: "03",
-        title: "Hasarsız Yükleme & Teslimat",
-        desc: "Aracınız uzman operatörümüz tarafından tambur veya aparatla çekiciye sabitlenir ve güvenle hedefe ulaştırılır."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "İstanbul'da Neden Arman Oto Çekici?",
-        body: "Şehir içi araç trafiğinde beklenmedik mekanik arızalar, şanzıman kilitlenmeleri, yakıt bitmesi veya elektronik arızalar sürücülerin en büyük kabusudur. Arman Oto Kurtarma, Çekmeköy Soğukpınar merkezli modern araç filosuyla Anadolu Yakası genelinde hızlı, profesyonel ve kurumsal çekici hizmeti sunmaktadır. Sıradan çekici anlayışının ötesinde, aracınızın kaportasına, tamponuna, alt şasisine ve şanzımanına en ufak bir zarar gelmeyecek hassasiyetle taşıma gerçekleştiriyoruz."
-      },
-      {
-        heading: "Kayar Kasa Çekici ile Güvenli Yükleme Standardı",
-        body: "Eski tip sabit kasalı ve dik açılı çekiciler, günümüzün alçak tamponlu modern binek ve spor otomobillerinde sürtme riskleri oluşturur. Filomuzda yer alan tam hidrolik kayar kasalar, zeminle olan açısını neredeyse sıfıra indirerek aracınızın hiçbir yere temas etmeden platforma çıkmasını sağlar. Tekerlek sabitleme takozları ve çelik cırcırlı gergilerle aracınız dört noktadan kasaya kilitlenir."
-      },
-      {
-        heading: "Elektrikli ve Hibrit Araç Çekiminde Uzmanlık",
-        body: "Elektrikli ve hibrit araçların çekilmesi özel bilgi gerektirir. Bu araçların çekiş tekerlekleri yere basarak sürüklendiğinde elektrik motorlarında ve batarya yönetim ünitelerinde onarımı son derece maliyetli hasarlar oluşabilir. Arman Oto Kurtarma operatörleri, elektrikli araç üreticilerinin belirlediği kaldırma ve düz platform taşıma protokollerine harfiyen uymaktadır."
-      }
-    ],
-    faqs: [
-      {
-        q: "Çekici fiyatı nasıl hesaplanıyor?",
-        a: "Başlangıç noktası ile varış noktası arasındaki kilometre mesafesi, aracın ağırlığı (binek, SUV, hafif ticari) ve yürürlük durumuna göre işlem öncesi fiyat bilgisilandırma yapıyoruz. İşleme başlamadan önce fiyat kesinleşir."
-      },
-      {
-        q: "Aracım çekilirken kontrollü mı?",
-        a: "Evet. Şirketimiz bünyesindeki tüm çekici araçlarımız aracın durumuna uygun yükleme ve sabitleme yöntemi kullanılır."
-      }
-    ],
-    recommendedLocations: ["cekmekoy-oto-cekici", "uskudar-oto-cekici", "tasdelen-oto-cekici", "sile-otoyolu-cekici"]
   },
   {
     slug: "oto-kurtarma",
     name: "Oto Kurtarma",
-    shortTitle: "Oto Kurtarma",
-    title: "Oto Kurtarma Hizmeti | Vinçli & Ağır Şart Kurtarma Arman",
-    description: "İstanbul oto kurtarma servisi. Yoldan çıkan, şarampole kayan, devrilen, tekerleği kilitli veya kazalı araçlara vinçli ve hasarsız kurtarma: 0536 213 62 49.",
-    h1: "Oto Kurtarma ve Zorlu Zemin Kurtarma Hizmeti",
-    heroKicker: "VİNÇLİ KURTARMA · ŞARAMPOLE MÜDAHALE · AHTAPOT SİSTEM",
-    summary: "Basit çekici operasyonlarının yetersiz kaldığı kaza, şarampole devrilme, batma veya tekerlek kilitlenmesi durumlarında güçlü hidrolik vinçli donanımımızla hasarsız kurtarma sağlıyoruz.",
-    features: [
-      "Ağır tonajlı hidrolik vinç ve çelik tambur donanımı",
-      "Kanal, şarampol ve bariyerden hasarsız çıkarma",
-      "Ahtapot aparat ile dört tekerlekten kaldırma",
-      "Kaza tespit tutanağı ve kasko sürecinde tam destek",
-      "Deneyimli ve sertifikalı kurtarma operatörleri"
+    kicker: "KAZA · KİLİTLİ TEKERLEK · ZORLU KONUM",
+    summary: "Yürüyemeyen, tekerleği kilitlenen veya yol dışına çıkan araçlarda bulunduğu konuma göre kontrollü kurtarma planı oluşturuyoruz.",
+    features: ["Fotoğrafla ön değerlendirme", "Kontrollü çekme noktası seçimi", "Güvenli alan oluşturma", "Kayar kasa ile devam taşıması", "Kaza sonrası servis teslimi"],
+    sections: [
+      { heading: "Kurtarma öncesi doğru tespit", body: "Aracın duruş açısı, zemin, tekerlek ve yürüyen aksam durumu fotoğraf üzerinden değerlendirilir. Ek hasar riskini azaltmak için çekme noktası ve yaklaşma yönü belirlenir." },
+      { heading: "Kaza alanından güvenli tahliye", body: "Trafik güvenliği sağlandıktan sonra araç kontrollü biçimde bulunduğu konumdan alınır. Gerekiyorsa doğrudan kaporta servisine, yetkili servise veya otoparka götürülür." },
     ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Durum Tespiti & Güvenlik",
-        desc: "Kaza veya arıza yerinin fotoğrafını ve konumunu WhatsApp'tan bize iletin; gerekli vinç ve ekipmanı belirleyelim."
-      },
-      {
-        step: "02",
-        title: "Güvenlik Çemberi & Sabitleme",
-        desc: "Olay yerine ulaşan ekibimiz yolu ikaz dubalarıyla emniyete alır ve aracı çelik halatlarla güvenli açıdan sabitler."
-      },
-      {
-        step: "03",
-        title: "Kontrollü Çekim & Kasaya Alma",
-        desc: "Aracın şasisi veya yürüyen aksamı zorlanmadan vinçle yola alınır ve anlaşmalı servise taşınır."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "Oto Kurtarma Ne Zaman Gereklidir?",
-        body: "Oto kurtarma, aracın yürüyemez halde olduğu veya bulunduğu pozisyondan doğrudan çekici kasasına sürülemeyeceği acil durumlarda devreye girer. Kış aylarında gizli buzlanma sebebiyle şarampole kayanlar, yağmurda virajı alamayarak refüje çıkanlar, kanala düşenler ya ve tekerleği tamamen kilitlenmiş araçlar kurtarma operasyonu gerektirir."
-      },
-      {
-        heading: "Hasarsız Kurtarma Mühendisliği",
-        body: "Kurtarma anında yapılan en büyük hata, aracın rastgele bir noktadan çelik halatla asılarak çekilmesidir. Bu durum şasinin eğrilmesine, traversin yamulmasına ve binlerce liralık ek masrafa yol açar. Arman Oto Kurtarma ekibi, aracın orijinal çekme noktalarını, askı kollarını ve ağırlık merkezini hesaplayarak çeker."
-      }
-    ],
-    faqs: [
-      {
-        q: "Aracım şarampole kaydı, kurtarırken daha fazla hasar görür mü?",
-        a: "Hayır. Ekiplerimiz aracın altını sürtmeden kaldırmak için hava yastıkları, vinç bomu ve koruyucu makara donanımları kullanır."
-      }
-    ],
-    recommendedLocations: ["cekmekoy-oto-kurtarma", "uskudar-oto-kurtarma", "omerli-oto-cekici", "resadiye-oto-cekici"]
   },
   {
     slug: "7-24-yol-yardim",
     name: "7/24 Yol Yardım",
-    shortTitle: "7/24 Yol Yardım",
-    title: "7/24 Yol Yardım Hizmeti | Akü, Lastik & Çekici Arman",
-    description: "İstanbul Anadolu Yakası 7/24 acil yol yardım servisi. Yerinde akü takviyesi, lastik yardımı, yakıt ulaştırma ve acil oto çekici: 0536 213 62 49.",
-    h1: "7/24 Kesintisiz Acil Yol Yardım Hizmeti",
-    heroKicker: "YERİNDE HIZLI DESTEK · AKÜ TAKVİYESİ · MOBİL SERVİS",
-    summary: "Yolda kaldığınızda sorunu önce bulunduğunuz yerde çözmeye çalışıyor, çözülemeyecek arızalarda ise aracınızı en uygun servise güvenle taşıyoruz.",
-    features: [
-      "Mobil yol yardım aracıyla yerinde hızlı müdahale",
-      "12V ve 24V profesyonel akü takviye cihazları",
-      "Bijon açma ve stepne montaj desteği",
-      "Günün 24 saati kesintisiz çağrı merkezi",
-      "Gereksiz çekici masrafı çıkarmayan çözüm odaklı yaklaşım"
+    kicker: "AKÜ · LASTİK · YAKIT · YERİNDE DESTEK",
+    summary: "Her arıza çekici gerektirmez. Sancaktepe'de akü, lastik ve basit yol yardım ihtiyaçlarında önce yerinde çözüm seçeneğini değerlendiriyoruz.",
+    features: ["Akü takviye desteği", "Stepne değişimi", "Yakıt ulaştırma", "Arıza tespiti sonrası çekici", "7 gün 24 saat erişim"],
+    sections: [
+      { heading: "Önce sorunu doğru tanımlayın", body: "Marş sesi, gösterge uyarısı, lastik durumu ve aracın bulunduğu alanı tarif etmeniz doğru ekibi seçmemizi sağlar. Sorun yerinde çözülmezse araç taşıma planına geçilir." },
+      { heading: "Gereksiz taşıma yapılmaz", body: "Yalnızca akü veya stepne desteğiyle güvenli biçimde yola devam edilebiliyorsa çekici masrafı oluşmadan yerinde destek verilir." },
     ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Arıza Belirtisini Anlatın",
-        desc: "Aracın marş basıp basmadığını, ses gelip gelmediğini veya lastik durumunu telefonda uzmanımıza aktarın."
-      },
-      {
-        step: "02",
-        title: "Mobil Ekip Yönlendirmesi",
-        desc: "İhtiyacınıza göre yerinde akü/lastik ekibi veya doğrudan kayar kasa kurtarıcı ekibimiz sevk edilir."
-      },
-      {
-        step: "03",
-        title: "Yola Devam Edin veya Servise Nakil",
-        desc: "Sorun yerinde çözülürse güvenle yola devam edersiniz; parça değişimi gerekiyorsa aracınız servise götürülür."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "Yolda Kalmanın Stresini Ortadan Kaldırıyoruz",
-        body: "Gece geç saatte eve dönerken veya sabah işe yetişmeye çalışırken otomobilinizin arızalanması son derece can sıkıcıdır. Arman Oto Kurtarma 7/24 yol yardım servisi, sürücülerin bu anlarda aradığı samimi, hızlı ve dürüst teknik desteği sunar."
-      }
-    ],
-    faqs: [
-      {
-        q: "Yol yardım hizmetine neler dahildir?",
-        a: "Akü takviyesi, stepne değişimi, yakıt takviyesi, basit sigorta/elektrik kontrolleri ve arıza çözülemezse oto çekici ile nakil dahildir."
-      }
-    ],
-    recommendedLocations: ["uskudar-yol-yardim", "cekmekoy-oto-cekici", "altunizade-oto-cekici"]
   },
   {
     slug: "acil-cekici",
     name: "Acil Çekici",
-    shortTitle: "Acil Çekici",
-    title: "Acil Çekici | Trafikte ve Otoyolda Öncelikli Arman Oto Kurtarma",
-    description: "Acil oto çekici servisi. Otoyolda, köprü katılımında veya yoğun trafikte kalan araçlar için uygun ekip yönlendirmesiyle acil öncelikli tahliye: 0536 213 62 49.",
-    h1: "Acil Oto Çekici - Öncelikli Kurtarma Çağrısı",
-    heroKicker: "ANINDA ÇIKIŞ · OTOYOL VE KÖPRÜLERDE CAN GÜVENLİĞİ",
-    summary: "Trafiğin aktığı tehlikeli noktalarda veya otoyol emniyet şeridinde kalan araçlar için alarm seviyesinde öncelikli acil çekici yönlendirmesi yapıyoruz.",
-    features: [
-      "Acil durum protokolüyle en yakın ekibe anında yönlendirme",
-      "Sarı tepe lambalı ve reflektif güvenlik donanımlı araçlar",
-      "Otoyol ve köprü bağlantı noktalarına hakim sürücüler",
-      "Trafiği aksatmadan hızlı yükleme ve tahliye"
+    kicker: "TEM · KAVŞAK · YOĞUN TRAFİK · ÖNCELİKLİ ÇAĞRI",
+    summary: "Trafik akışında risk oluşturan arıza ve kaza çağrılarında konum, yol yönü ve araç durumunu alarak uygun ekibi öncelikli planlıyoruz.",
+    features: ["Canlı konumla rota", "Yol yönü teyidi", "Görünür ikaz ekipmanı", "Kaza ve arıza tahliyesi", "Telefonla tahmini varış bilgisi"],
+    sections: [
+      { heading: "Önce can güvenliği", body: "Dörtlülerinizi yakın, mümkünse aracı emniyetli alana alın ve hızlı yolda araç içinde beklemeyin. Yol adı, istikamet ve en yakın çıkış bilgisini paylaşın." },
+      { heading: "Doğru noktaya yaklaşma", body: "Otoyol ve kavşaklarda yanlış yönden yaklaşmak zaman kaybettirir. Canlı konumla birlikte yol yönü bilgisi alınarak ekip rotası netleştirilir." },
     ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Acil Çağrı & Konum",
-        desc: "0536 213 62 49'u arayıp acil konumunuzu belirtin; konumunuz en yüksek öncelikle işleme alınır."
-      },
-      {
-        step: "02",
-        title: "Işıklı Güvenlik Önlemi",
-        desc: "Olay yerine ulaşan aracımız sarı ikaz flaşörleriyle arkadan gelen trafiği uyarır."
-      },
-      {
-        step: "03",
-        title: "Seri Tahliye",
-        desc: "Araç uygun ekip yönlendirmesiyle platforma alınarak tehlikeli bölgeden uzaklaştırılır."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "Neden Acil Çekiciye İhtiyaç Duyulur?",
-        body: "İstanbul'un yoğun arterlerinde (Şile Yolu, D-100, TEM, 15 Temmuz Şehitler Köprüsü) duran bir araç her saniye zincirleme kaza riski oluşturur. Bu gibi durumlarda çekicinin gelmesi için 1 saat beklenemez. Arman Oto Kurtarma acil durum çağrılarına çağrıyı önceliklendirerek uygun aracı yönlendirir."
-      }
-    ],
-    faqs: [
-      {
-        q: "Acil çekici çağırdığımda normalden pahalı mı olur?",
-        a: "Hayır! Arman Oto Kurtarma'da acil çekici çağrıları standart dürüst kilometre tarifemiz üzerinden işlem görür."
-      }
-    ],
-    recommendedLocations: ["sile-otoyolu-cekici", "kuzey-marmara-otoyolu-cekici", "altunizade-oto-cekici"]
   },
   {
     slug: "kazali-arac-cekme",
     name: "Kazalı Araç Çekme",
-    shortTitle: "Kazalı Araç Çekme",
-    title: "Kazalı Araç Çekme | Kaza Sonrası kontrollü Taşıma Arman",
-    description: "Kaza yapmış yürümeyen araçların kaporta ve mekanik servislere güvenli taşınması. Kaza tutanağı ve kasko anlaşmalı faturalı çekici: 0536 213 62 49.",
-    h1: "Kazalı Araç Çekme ve Hasarsız Yükleme",
-    heroKicker: "KAZA SONRASI SERVİSE VE OTOPARKA GÜVENLİ NAKİL",
-    summary: "Trafik kazası sonrası tekerleği kopan, aksı kırılan veya kaportası sıkışan araçları hasarın boyutunu artırmadan profesyonel ekipmanla naklediyoruz.",
-    features: [
-      "Kırık aks ve kilitli tekerlekler için taşıma arabası (dolly)",
-      "Kaporta parçalarının sürtmesini engelleyen rampa açıları",
-      "Kaza tespit tutanağı sürecine uygun fatura ve evrak düzenleme",
-      "Anlaşmalı kaporta ve yetkili servislere doğrudan teslim"
+    kicker: "KAZA SONRASI · SERVİS · OTOPARK · TESLİM",
+    summary: "Kaza sonrası yürüyemeyen aracı mevcut hasarı artırmadan platforma alıp tercih ettiğiniz servise veya otoparka ulaştırıyoruz.",
+    features: ["Hasar durumuna göre yükleme", "Kilitli tekerlek aparatı", "Kaporta servisine teslim", "Fotoğraflı durum teyidi", "Kontrollü sabitleme"],
+    sections: [
+      { heading: "Kaza sonrası yükleme hassasiyeti", body: "Tekerlek, aks, tampon ve yürüyen aksam hasarı kontrol edilir. Aracın platforma alınma açısı mevcut hasarı büyütmeyecek şekilde planlanır." },
+      { heading: "Servis veya otoparka teslim", body: "Kaza işlemleri tamamlandıktan sonra araç seçtiğiniz noktaya taşınır. Teslim adresi ve iletişim bilgisi çağrı sırasında netleştirilir." },
     ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Kaza Alanı Güvenliği",
-        desc: "Tutanaklar tutulurken ekibimiz kaza yerine gelir ve çevreyi emniyete alır."
-      },
-      {
-        step: "02",
-        title: "Dengeli Yükleme",
-        desc: "Kaza nedeniyle hareket etmeyen tekerleklerin altına kızaklar yerleştirilerek araç kasaya çekilir."
-      },
-      {
-        step: "03",
-        title: "Servis veya Otopark Teslimi",
-        desc: "Araç ekspertiz yapılacak servise veya yediemin/özel otoparka teslim edilir."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "Kaza Sonrasında Doğru Çekici Seçimi",
-        body: "Kaza geçiren bir aracın bilinçsizce çekilmesi, şasinin eğrilmesine veya kaza anında sağlam kalmış mekanik parçaların da zarar görmesine neden olabilir. Arman Oto Kurtarma ekibi uzmanlığıyla aracınızı özenle taşır."
-      }
-    ],
-    faqs: [
-      {
-        q: "Çekici ücretini kaskomdan alabilir miyim?",
-        a: "Evet. Hizmetimiz karşılığında düzenlediğimiz resmi faturayı kasko veya sigorta şirketinize ibraz ederek çekici bedelini geri alabilirsiniz."
-      }
-    ],
-    recommendedLocations: ["cekmekoy-oto-kurtarma", "uskudar-oto-kurtarma", "sile-otoyolu-cekici"]
   },
   {
     slug: "arizali-arac-cekme",
     name: "Arızalı Araç Çekme",
-    shortTitle: "Arızalı Araç Çekme",
-    title: "Arızalı Araç Çekme | Motor, Şanzıman & Elektrik Arızaları Arman",
-    description: "Arızalı araç çekme servisi. Motor harareti, triger kopması, şanzıman arızası veya elektronik kilitlenmelerde hasarsız çekici: 0536 213 62 49.",
-    h1: "Arızalı Araç Çekme ve Servis Nakil Servisi",
-    heroKicker: "MEKANİK VE ELEKTRONİK ARIZALARDA HASARSIZ TRANSFER",
-    summary: "Motoru çalışmayan, şanzımanı kilitlenen veya hararet yapan araçlarınızı zorlamadan kayar kasamıza alıp ustanızın kapısına bırakıyoruz.",
-    features: [
-      "Motoru çalıştırmadan güvenli elektrikli vinç yüklemesi",
-      "Otomatik şanzıman koruma prosedürleri",
-      "Tampon ve egzoz sürtmesini önleyen düz platform",
-      "İstanbul'un tüm sanayi sitelerine özenli nakil"
+    kicker: "MOTOR · ŞANZIMAN · ELEKTRİK · HAREKETSİZ ARAÇ",
+    summary: "Motor, şanzıman veya elektrik arızası nedeniyle çalışmayan aracınızı bulunduğu yerden alıp uygun servise taşıyoruz.",
+    features: ["Otomatik vites için uygun yükleme", "Elektrikli araç taşıma", "Kapalı otopark durum tespiti", "Servis randevusuna nakil", "Gece-gündüz destek"],
+    sections: [
+      { heading: "Aracı zorlamadan taşıma", body: "Hararet, yağ basıncı, şanzıman veya elektrik uyarısı varsa aracı tekrar tekrar çalıştırmak hasarı büyütebilir. Belirtiyi paylaşın; gerekiyorsa doğrudan taşıma planlayalım." },
+      { heading: "Kilitli tekerlek ve dar alan", body: "Vites boşa alınamıyorsa veya araç kapalı otoparktaysa tavan yüksekliği, kat ve çıkış eğimi bilgisiyle uygun aparat değerlendirilir." },
     ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Arıza Tipini Bildirin",
-        desc: "Şanzıman, motor veya yürüyen aksam durumunu aktarın, uygun kurtarıcıyı yönlendirelim."
-      },
-      {
-        step: "02",
-        title: "Zorlamadan Yükleme",
-        desc: "Marşa basmadan çelik tambur yardımıyla aracı kayar kasaya alıyoruz."
-      },
-      {
-        step: "03",
-        title: "Servise Teslimat",
-        desc: "Aracınızı belirlediğiniz tamirhane veya yetkili servisteki ustaya bizzat teslim ediyoruz."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "Arızalı Aracı Hareket Ettirmenin Tehlikeleri",
-        body: "Motor hararet yaptığında veya yağ basıncı düştüğünde aracı sürmeye devam etmek motor bloğunun çatlamasına ve on binlerce liralık masrafa yol açar. En doğru hamle aracı derhal stop edip çekici çağırmaktır."
-      }
-    ],
-    faqs: [
-      {
-        q: "Otomatik vites boşa geçmiyor, araç çekilebilir mi?",
-        a: "Evet. Tekerleklerin altına kızak kaydırıcı koyarak veya vites kilidi kilit açma prosedürünü uygulayarak aracı şanzımana zarar vermeden yüklüyoruz."
-      }
-    ],
-    recommendedLocations: ["cekmekoy-oto-cekici", "tasdelen-oto-cekici", "umraniye-oto-cekici"]
   },
   {
     slug: "sehir-ici-arac-tasima",
     name: "Şehir İçi Araç Taşıma",
-    shortTitle: "Şehir İçi Taşıma",
-    title: "Şehir İçi Araç Taşıma | İstanbul İlçeleri Arası Arman Oto Kurtarma",
-    description: "İstanbul ilçeleri arasında güvenli ve kontrollü şehir içi araç taşıma. Servis nakli, muayene transferi, klasik ve lüks otomobil taşımacılığı: 0536 213 62 49.",
-    h1: "Şehir İçi Araç Taşıma ve Çok Noktalı Transfer",
-    heroKicker: "İSTANBUL İÇİ SERVİS, NOTER VE MUAYENE TRANSFERLERİ",
-    summary: "Çekmeköy veya Üsküdar'dan başlayarak İstanbul'un tüm ilçelerine arızalı, sıfır, klasik veya lüks otomobillerinizi özenli olarak ulaştırıyoruz.",
-    features: [
-      "Randevulu ve saatinde kapıdan kapıya teslimat",
-      "Klasik, antika ve alçak şasili araçlar için hassas sabitleme",
-      "Muayenesi bitmiş veya trafiğe çıkamayan araçların güvenli nakli",
-      "Tam kapsamlı taşıma kaskosu"
+    kicker: "SERVİS TRANSFERİ · MUAYENE · OTOPARK · ADRESTEN ADRESE",
+    summary: "Çalışır veya çalışmaz durumdaki araçlar için Sancaktepe çıkışlı, İstanbul içi planlı taşıma hizmeti sunuyoruz.",
+    features: ["Adresten adrese taşıma", "Servis ve sanayi transferi", "Muayene istasyonu nakli", "Klasik araç taşıma", "Randevulu planlama"],
+    sections: [
+      { heading: "Planlı araç nakli", body: "Arıza dışında bakım, muayene, satış veya otopark değişimi gibi nedenlerle de araç taşıması yapılır. Alış ve teslim saati planlanarak rota oluşturulur." },
+      { heading: "Şehir içinde tek araç taşıma", body: "Araç başka yüklerle birleştirilmeden, seçilen noktadan alınıp doğrudan teslim adresine ulaştırılır." },
     ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Rezervasyon Oluşturun",
-        desc: "Aracın alınacağı ve teslim edileceği adresi, tercih ettiğiniz saati iletin."
-      },
-      {
-        step: "02",
-        title: "Zamanında Yükleme",
-        desc: "Belirttiğiniz saatte adresinizde olan kayar kasa aracımız otomobilinizi platforma alır."
-      },
-      {
-        step: "03",
-        title: "Güvenli Teslimat",
-        desc: "Trafik kurallarına uygun biçimde varış adresindeki yetkiliye teslim edilir."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "Planlı Araç Transferlerinde Güvenilir Çözüm Ortağınız",
-        body: "Sadece acil arızalarda değil; yeni araç alımlarında, noter işlemlerinde, ekspertiz transferlerinde veya periyodik bakım servislerine gidiş-gelişlerde planlı şehir içi taşıma hizmetimizle yanınızdayız."
-      }
-    ],
-    faqs: [
-      {
-        q: "Muayenesi bitmiş araç çekici ile taşınabilir mi?",
-        a: "Evet. Muayenesi olmayan veya çekme belgeli araçların karayolunda kendi tekerlekleri üzerinde gitmesi yasaktır; çekici üzerinde taşınması tamamen yasaldır."
-      }
-    ],
-    recommendedLocations: ["cekmekoy-oto-cekici", "uskudar-oto-cekici", "kadikoy-oto-cekici"]
-  },
-  {
-    slug: "oto-transfer",
-    name: "Oto Transfer",
-    shortTitle: "Oto Transfer",
-    title: "Oto Transfer Hizmeti | Şehirler Arası & Bölgesel Taşıma Arman",
-    description: "Şehirler arası ve bölgesel profesyonel oto transfer hizmeti. İstanbul'dan Türkiye'nin dört bir yanına özenli, tekli veya çoklu özel araç taşıma: 0536 213 62 49.",
-    h1: "Profesyonel Oto Transfer ve Özel Araç Sevkiyatı",
-    heroKicker: "ŞEHİRLER ARASI özenli ARAÇ TAŞIMA VE TRANSFER",
-    summary: "Aracınızı İstanbul'dan çevre illere (Kocaeli, Sakarya, Bursa, Ankara, İzmir) veya Türkiye'nin her noktasına anahtar teslim güvenle sevk ediyoruz.",
-    features: [
-      "Tekli özel çekici ile VIP hızlı transfer",
-      "Yol boyu GPS araç takip koordinasyonu",
-      "Ekspertiz raporlu teslim alma ve teslim etme",
-      "Yüksek teminatlı taşıyıcı sigortası"
-    ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Güzergah ve Tarih Belirleme",
-        desc: "Çıkış ve varış şehirlerini belirterek özel transfer fiyat teklifinizi alın."
-      },
-      {
-        step: "02",
-        title: "Ekspertiz ve Fotoğraflama",
-        desc: "Araç teslim alınırken kilometre ve kaporta durumu fotoğraflanıp tutanak altına alınır."
-      },
-      {
-        step: "03",
-        title: "Varış Noktasına Teslim",
-        desc: "Taahhüt edilen saatte varış adresindeki alıcıya güvenle teslim edilir."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "Şehirler Arası Araç Taşımada Neden Arman?",
-        body: "Uzun yol sürüşleri yapmak istemediğinizde, yeni satın aldığınız aracı getirtirken veya tatil beldelerine aracınızı önceden göndermek istediğinizde profesyonel oto transfer hizmetimiz en konforlu çözümdür."
-      }
-    ],
-    faqs: [
-      {
-        q: "Şehirler arası transferde araç başına sigorta yapılıyor mu?",
-        a: "Evet. Taşınan her araç piyasa değerini kapsayan Taşıyıcı Mali Mesuliyet Poliçesi ile güvenceye alınır."
-      }
-    ],
-    recommendedLocations: ["cekmekoy-oto-cekici", "sile-oto-cekici", "uskudar-oto-cekici"]
   },
   {
     slug: "aku-takviye",
     name: "Akü Takviye",
-    shortTitle: "Akü Takviye",
-    title: "Akü Takviye Hizmeti | Yerinde Marş Basma 7/24 Arman Oto Kurtarma",
-    description: "İstanbul Çekmeköy ve Üsküdar'da 7/24 yerinde akü takviyesi. Boşalan akülere profesyonel cihazla güvenli takviye, konuma göre ekip yönlendirmesi: 0536 213 62 49.",
-    h1: "Yerinde Akü Takviye ve Mobil Marş Desteği",
-    heroKicker: "BİTEN AKÜLERE GÜVENLİ TAKVİYE · 15 DAKİKADA YANINIZDA",
-    summary: "Farlar açık kaldığında veya soğuk havada akünüz bittiğinde, aracınızın beynine zarar vermeden profesyonel booster cihazlarımızla yerinde marş basıyoruz.",
-    features: [
-      "Profesyonel aşırı akım korumalı booster cihazları",
-      "Aracın elektronik beynine (ECU) zarar vermeyen voltaj sabitleme",
-      "Şarj dinamosu ve akü durum testi",
-      "Akü ömrü bitmişse yerinde yeni akü temini veya servise nakil"
+    kicker: "MARŞ BASMIYOR · YERİNDE TAKVİYE · 12V / 24V",
+    summary: "Aküsü biten araçlarda güvenli bir noktadaysanız uygun takviye ekipmanıyla yerinde çalıştırma desteği sağlıyoruz.",
+    features: ["Korumalı takviye cihazı", "12V ve 24V desteği", "Yerinde müdahale", "Marş sonrası kontrol", "Gerekirse servise taşıma"],
+    sections: [
+      { heading: "Güvenli takviye", body: "Rastgele kablo bağlantısı elektronik sistemlere zarar verebilir. Kutup yönü ve voltaj kontrolü yapılarak korumalı cihazla takviye uygulanır." },
+      { heading: "Akü dışında arıza ihtimali", body: "Takviye sonrasında araç çalışmıyorsa marş motoru, alternatör veya başka bir elektrik arızası olabilir. Bu durumda servise taşıma seçeneği sunulur." },
     ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Konum Gönderin",
-        desc: "Aracınızın park halinde olduğu konumu bildirin, mobil ekibimiz derhal yola çıksın."
-      },
-      {
-        step: "02",
-        title: "Voltaj Kontrolü & Güvenli Bağlantı",
-        desc: "Kutup başları temizlenir, profesyonel cihazımızla güvenli bağlantı sağlanır."
-      },
-      {
-        step: "03",
-        title: "Marş ve Şarj Kontrolü",
-        desc: "Araç çalıştırıldıktan sonra alternatörün şarj edip etmediği kontrol edilir."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "Bilinçsiz Akü Takviyesinin Zararları",
-        body: "Modern otomobiller hassas mikroişlemciler ve sensörlerle doludur. Başka bir araçtan rastgele kabloyla takviye yapmak yüksek voltaj dalgalanmalarına neden olarak araç beynini (ECU) yakabilir. Arman Oto Kurtarma korumalı profesyonel cihazlar kullanır."
-      }
-    ],
-    faqs: [
-      {
-        q: "Akü takviyesinden sonra ne kadar aracı çalıştırmalıyım?",
-        a: "Takviye sonrası alternatörün aküyü doldurabilmesi için aracınızı en az 30-45 dakika stop etmeden kullanmanızı veya rölantide çalıştırmanızı öneririz."
-      }
-    ],
-    recommendedLocations: ["sogukpinar-oto-cekici", "uskudar-yol-yardim", "tasdelen-oto-cekici"]
   },
-  {
-    slug: "lastik-yol-yardimi",
-    name: "Lastik Yol Yardımı",
-    shortTitle: "Lastik Yol Yardımı",
-    title: "Lastik Yol Yardımı | Stepne Değişimi & Şişirme Arman",
-    description: "İstanbul 7/24 lastik yol yardım hizmeti. Patlak lastik değişimi, bijon sökme desteği, hava kompresörü ve en yakın lastikçiye çekici: 0536 213 62 49.",
-    h1: "Lastik Yol Yardımı ve Yerinde Değişim Desteği",
-    heroKicker: "PATLAK LASTİK · STEPNE DEĞİŞİMİ · LASTİKÇİYE NAKİL",
-    summary: "Yolda lastiğiniz patladığında; stepnenizi takıyor, bijonları güvenle sıkıyor veya stepneniz yoksa aracınızı en yakın açık lastikçiye taşıyoruz.",
-    features: [
-      "Pnömatik ve hidrolik krikolarla hızlı kaldırma",
-      "Kaynamış bijonları hasarsız açma donanımı",
-      "Yüksek basınçlı taşınabilir hava kompresörü",
-      "Stepne bulunmayan araçlar için çekici desteği"
-    ],
-    processSteps: [
-      {
-        step: "01",
-        title: "Güvenli Alanda Durun",
-        desc: "Lastik indiğinde janta zarar vermeden aracı güvenli emniyet şeridine çekin."
-      },
-      {
-        step: "02",
-        title: "Yerinde Değişim",
-        desc: "Ekibimiz gelerek stepnenizi takar ve doğru hava basıncını ayarlar."
-      },
-      {
-        step: "03",
-        title: "Lastik Tamircisine Ulaşım",
-        desc: "Stepneniz yoksa veya lastik yarılmışsa aracınızı nöbetçi lastikçiye naklederiz."
-      }
-    ],
-    contentSections: [
-      {
-        heading: "Patlak Lastikle Jant Üzerinde Gitmeyin",
-        body: "Havası inmiş bir lastikle metrelerce gitmek sadece lastiği parçalamakla kalmaz, pahalı alaşım jantın kırılmasına ve süspansiyon sisteminin zarar görmesine neden olur. Mobil lastik desteğimiz uygun ekip yönlendirmesiyle çözüm üretir."
-      }
-    ],
-    faqs: [
-      {
-        q: "Aracımda stepne yoksa ne yapıyorsunuz?",
-        a: "Eğer araçta stepne veya tamir kiti yoksa kayar kasa çekicimize yükleyerek en yakındaki nöbetçi lastik tamircisine götürüyoruz."
-      }
-    ],
-    recommendedLocations: ["sile-otoyolu-cekici", "cekmekoy-oto-cekici", "uskudar-oto-cekici"]
-  }
 ];
 
-export const findServiceBySlug = (slug: string) =>
-  servicesData.find((svc) => svc.slug === slug);
+export const servicesData: ServicePageData[] = seeds.map((seed) => ({
+  slug: seed.slug,
+  name: seed.name,
+  shortTitle: seed.name,
+  title: `${seed.name} | Sancaktepe Umay Oto Kurtarıcı`,
+  description: `${seed.name} hizmeti Sancaktepe ve çevresinde 7/24. Konum paylaşın, araç durumuna uygun ekip yönlendirilsin: 0530 955 94 52.`,
+  h1: `${seed.name} Hizmeti`,
+  heroKicker: seed.kicker,
+  summary: seed.summary,
+  features: seed.features,
+  processSteps: commonSteps,
+  contentSections: seed.sections,
+  faqs: [
+    { q: `${seed.name} ücreti nasıl belirleniyor?`, a: "Alış ve teslim noktası, araç tipi ve yükleme koşulları değerlendirilir. İşleme başlamadan önce fiyat bilgisi paylaşılır." },
+    { q: "Gece ve hafta sonu hizmet veriyor musunuz?", a: "Evet. Umay Oto Kurtarıcı 7 gün 24 saat çağrı alır ve uygun ekibi konuma göre yönlendirir." },
+  ],
+  recommendedLocations: ["sancaktepe-oto-cekici", "sarigazi-oto-cekici", "samandira-oto-cekici", "yenidogan-oto-cekici"],
+}));
 
-
+export const findServiceBySlug = (slug: string) => servicesData.find((service) => service.slug === slug);

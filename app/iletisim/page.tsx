@@ -20,17 +20,17 @@ import {
 } from "@/lib/seo-schema";
 
 export const metadata: Metadata = {
-  title: "İletişim & Konum | Arman Oto Kurtarma - Çekmeköy Soğukpınar",
+  title: "İletişim & Konum | Umay Oto Kurtarıcı - Sancaktepe Paşaköy",
   description:
-    "Arman Oto Kurtarma iletişim bilgileri. Adres: Soğukpınar, Güvercin Sk. NO:4/A Çekmeköy / İstanbul. 7/24 Telefon: 0536 213 62 49. WhatsApp canlı konum desteği.",
+    "Umay Oto Kurtarıcı iletişim bilgileri. Adres: Paşaköy, Lokman Sokak No:4 Sancaktepe / İstanbul. 7/24 Telefon: 0530 955 94 52.",
   alternates: { canonical: `${siteConfig.domain}/iletisim` },
   openGraph: {
-    title: "İletişim & Konum | Arman Oto Kurtarma",
+    title: "İletişim & Konum | Umay Oto Kurtarıcı",
     description:
-      "Çekmeköy Soğukpınar merkezli oto çekici ofisimiz, Google Haritalar konumu ve 7/24 telefon numaralarımız.",
+      "Sancaktepe Paşaköy merkezli oto çekici ofisimiz, Google Haritalar konumu ve 7/24 telefon numaramız.",
     url: `${siteConfig.domain}/iletisim`,
     siteName: siteConfig.name,
-    images: [{ url: `${siteConfig.domain}/arman-hero.jpg` }],
+    images: [{ url: `${siteConfig.domain}${siteConfig.hero}` }],
   },
 };
 
@@ -47,7 +47,7 @@ export default function ContactPage() {
     <main className="seo-page">
       {/* Header */}
       <header className="site-header">
-        <Link href="/" className="brand" aria-label="Arman Oto Kurtarma Ana Sayfa">
+        <Link href="/" className="brand" aria-label="Umay Oto Kurtarıcı Ana Sayfa">
           <BrandLogo variant="horizontal" />
         </Link>
         <nav aria-label="Navigasyon">
@@ -84,7 +84,7 @@ export default function ContactPage() {
           </div>
           <h1>İletişim ve Google Haritalar Konumu</h1>
           <p>
-            Çekmeköy Soğukpınar merkezli ofisimiz, 7/24 aktif nöbetçi telefonlarımız ve anında canlı
+            Sancaktepe Paşaköy merkezli ofisimiz, 7/24 aktif nöbetçi telefonumuz ve anında canlı
             konum alabileceğiniz WhatsApp hattımız ile bir tık uzağınızdayız.
           </p>
           <div className="area-hero-actions">
@@ -192,7 +192,7 @@ export default function ContactPage() {
               CANLI HARİTA KONUMU
             </small>
             <h3 className="text-2xl font-extrabold text-white mt-2 mb-4 tracking-tight">
-              Çekmeköy Soğukpınar İstasyonumuz
+              Sancaktepe Paşaköy İstasyonumuz
             </h3>
             <div className="map-frame rounded-xl overflow-hidden border-2 border-slate-800 shadow-2xl">
               <iframe
@@ -203,7 +203,7 @@ export default function ContactPage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Çekmeköy Oto Çekici Arman Oto Kurtarıcı Harita Konumu"
+                title="Sancaktepe Çekici Umay Oto Kurtarıcı Harita Konumu"
               />
             </div>
             <div className="mt-4 flex items-center justify-between p-4 rounded-lg bg-slate-900 border border-slate-800">
