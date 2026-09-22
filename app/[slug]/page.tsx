@@ -104,9 +104,11 @@ export default async function LocationPage({
         </Link>
         <nav aria-label="Navigasyon">
           <Link href="/#hizmetler">Hizmetler</Link>
-          <Link href="/#bolgeler">Bölgeler</Link>
+          <Link href="/hizmet-bolgeleri">Bölgeler</Link>
           <Link href="/sancaktepe-oto-cekici">Sancaktepe</Link>
-          <Link href="/hakkimizda">Hakkımızda</Link>
+          <Link href="/cekmekoy-oto-cekici">Çekmeköy</Link>
+          <Link href="/sultanbeyli-oto-cekici">Sultanbeyli</Link>
+          <Link href="/pendik-oto-cekici">Pendik</Link>
           <Link href="/iletisim">İletişim</Link>
         </nav>
         <a className="header-call" href={`tel:${siteConfig.phone}`}>
@@ -115,8 +117,11 @@ export default async function LocationPage({
         <MobileMenu
           links={[
             { href: "/#hizmetler", label: "Hizmetlerimiz" },
-            { href: "/#bolgeler", label: "Hizmet Bölgeleri" },
-            { href: "/blog", label: "Bilgi Rehberi" },
+            { href: "/hizmet-bolgeleri", label: "Hizmet Bölgeleri" },
+            { href: "/sancaktepe-oto-cekici", label: "Sancaktepe Çekici" },
+            { href: "/cekmekoy-oto-cekici", label: "Çekmeköy Çekici" },
+            { href: "/sultanbeyli-oto-cekici", label: "Sultanbeyli Çekici" },
+            { href: "/pendik-oto-cekici", label: "Pendik Çekici" },
             { href: "/hakkimizda", label: "Hakkımızda" },
             { href: "/iletisim", label: "İletişim & Harita" },
           ]}

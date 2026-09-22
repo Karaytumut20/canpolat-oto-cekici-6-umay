@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hakkımızda | Umay Oto Kurtarıcı",
     description:
-      "İstanbul Sancaktepe ve çevresinde 7/24 oto çekici, oto kurtarma ve yol yardım hizmeti.",
+      "Sancaktepe Paşaköy merkezli Umay Oto Kurtarıcı; Sancaktepe, Çekmeköy, Sultanbeyli ve Pendik'te 7/24 oto çekici ve yol yardım hizmeti sunar.",
     url: `${siteConfig.domain}/hakkimizda`,
     siteName: siteConfig.name,
     images: [{ url: `${siteConfig.domain}${siteConfig.hero}` }],
@@ -227,7 +227,7 @@ export default function AboutPage() {
             7/24 BİZE ULAŞIN
           </small>
           <h2>Yol Yardım Desteği İçin Hazırız.</h2>
-          <p>Sancaktepe, Sarıgazi, Samandıra, Yenidoğan ve çevre ilçelerde dilediğiniz an bizi arayabilirsiniz.</p>
+          <p>Sancaktepe Paşaköy merkezimizden; Sancaktepe, Çekmeköy, Sultanbeyli ve Pendik ilçelerinde dilediğiniz an bizi arayabilirsiniz.</p>
         </div>
         <a href={`tel:${siteConfig.phone}`}>
           <Phone size={18} /> {siteConfig.phoneDisplay}

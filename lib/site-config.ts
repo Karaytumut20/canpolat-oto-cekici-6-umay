@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Umay Oto Kurtarıcı",
   officialName: "Sancaktepe Çekici Umay Oto Kurtarıcı",
   shortName: "Umay Oto Kurtarıcı",
-  slogan: "Sancaktepe'de 7/24 yol yardım ve araç kurtarma",
+  slogan: "Sancaktepe, Çekmeköy, Sultanbeyli ve Pendik'te 7/24 oto kurtarma",
   phone: "+905309559452",
   phoneDisplay: "0530 955 94 52",
   whatsapp:
