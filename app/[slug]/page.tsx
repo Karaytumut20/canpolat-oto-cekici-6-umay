@@ -178,7 +178,7 @@ export default async function LocationPage({
 
           {loc.localGuide.map((item, idx) => (
             <div key={idx} className="mb-8">
-              <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
+              <h3 className="text-xl font-bold mb-3 tracking-tight">
                 {item.heading}
               </h3>
               <p>{item.text}</p>
@@ -208,7 +208,7 @@ export default async function LocationPage({
 
           {/* Emergency Step Checklist */}
           <div className="my-8">
-            <h3 className="text-xl font-bold text-white mb-3">
+            <h3 className="text-xl font-bold mb-3">
               {loc.name} Çevresinde Yolda Kalınca Ne Yapmalısınız?
             </h3>
             <div className="space-y-3">
@@ -240,13 +240,13 @@ export default async function LocationPage({
 
           {/* Service FAQs */}
           <div className="mt-12">
-            <h3 className="text-2xl font-bold text-white mb-6">
+            <h3 className="text-2xl font-bold mb-6">
               {loc.name} Hakkında Sıkça Sorulanlar
             </h3>
             <div className="faq-list">
               {loc.faqs.map((faq, i) => (
                 <details key={faq.q} className="border-b border-slate-800">
-                  <summary className="cursor-pointer py-4 flex items-center justify-between text-base font-bold text-white">
+                  <summary className="cursor-pointer py-4 flex items-center justify-between text-base font-bold">
                     <span>0{i + 1}. {faq.q}</span>
                     <span className="text-amber-500 text-xl font-mono">+</span>
                   </summary>
